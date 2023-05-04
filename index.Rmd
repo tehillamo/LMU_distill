@@ -1,6 +1,5 @@
 ---
 title: "Chair of Computational Modeling in Psychology"
-image: "images/1CM.png"
 links:
   - label: '<i class="fas fa-university"></i> LMU Page'
     url: 'https://www.psy.uni-muenchen.de/comppsy/about_us/index.html target="_blank"'
@@ -12,6 +11,7 @@ links:
     url: 'https://github.com/ target="_blank"' 
   - label: '<i class="fab fa-twitter"></i> Twitter'
     url: 'https://twitter.com/ target="_blank"'
+image: "images/1CM.png"
 output:
   postcards::solana
 site: distill::distill_website

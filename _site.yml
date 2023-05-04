@@ -3,6 +3,7 @@ title: "Computational Modeling in Psychology: LMU"
 description: |
   LMU_academic_website
 output_dir: "docs"
+theme: lmu_theme.css
 navbar:
   right:
     - text: "Home"
