@@ -1,0 +1,25 @@
+---
+title: "Chair of Computational Modeling in Psychology"
+#image: "sigridur.jpg"
+links:
+  - label: LMU Webpage
+    url: "https://www.psy.uni-muenchen.de/comppsy/about_us/index.html"
+  # - label: Blog
+  #   url: "https://medium.com/"
+  # - label: SoundCloud
+  #   url: "https://soundcloud.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+output:
+  postcards::solana
+site: distill::distill_website
+---
+ 
+## About Us 
+
+## New Publications
+
+## Teaching 
+
+## Blogs
+
