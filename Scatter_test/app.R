@@ -9,6 +9,13 @@
 
 library(shiny)
 library(ggplot2)
+library(ggpmisc)
+library(tidyverse)
+library(dplyr)
+
+
+
+
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -45,9 +52,17 @@ server <- function(input, output) {
       
       mtc <- mtcars[, c(input$VarX, input$VarY)]
       
-      gplot <-  ggplot(mtc, aes(mtc[,1], mtc[,2])) +
+      summ_X <- paste("Mean of", input$VarX, "variable:", mean(mtcars[, c(input$VarX)]))
+
+      summ_y <- paste("Mean of", input$VarY, "variable:", mean(mtcars[, c(input$VarY)]))
+      
+      gplot <-  ggplot(mtc, aes(mtc[,1], mtc[,2]), color = mtc[,1]) +
         geom_point() +
-        ggplot2::geom_smooth(method = "lm")
+        geom_smooth(method = "lm") + 
+        annotate(geom = "text", x = 15, y = 30, label = summ_X,
+                 color = "red") +
+        annotate(geom = "text", x = 15, y = 32, label = summ_y,
+                 color = "red")
       
       gplot
         

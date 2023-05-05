@@ -4,12 +4,3 @@ description: |
   Some additional details about the website
 ---
 
-```{r}
-library(shiny)
-```
-
-
-```{r, layout="l-screen-inset"}
-htmltools::tags$iframe(src = "<RSCONNECT URL>", height = "600px", width = "100%", `data-external` = "1")
-```
-

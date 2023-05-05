@@ -9,6 +9,8 @@
 
 library(shiny)
 library(ggplot2)
+library(ggpubr)
+
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -47,7 +49,8 @@ server <- function(input, output) {
       
       gplot <-  ggplot(mtc, aes(mtc[,1], mtc[,2])) +
         geom_point() +
-        ggplot2::geom_smooth(method = "lm")
+        geom_smooth(method = "lm") +
+        geom_text(x = 25, y = 300, label = lm_eqn(mtcars), parse = TRUE)
       
       gplot
         
