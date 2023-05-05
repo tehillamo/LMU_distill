@@ -41,6 +41,15 @@ Now let's move onto the interactive Shiny app plot. The plot allows you to visua
 The app plot is an excellent way to see how the slope and intercept of a linear model can impact the fit of the model to the data. You can also see how the R-squared value changes as you adjust the model, which is a measure of how well the model fits the data. The closer the R-squared value is to 1, the better the model fits the data.
 
 
+The data Im using here is from a built-in dataset in R called "mtcar". 
+
+```{r, layout="l-body-outset"}
+library(knitr)
+kable(head(mtcars))
+```
+
+After looking at the different variables in this dataset, lets see how each of them can be modeled as a linear regression. The blue line represents the best-fitting line (i.e., the line that minimizes the distance between the data and the model -- the line with the lowest RSS)
+
 ```{r echo=FALSE}
 library(shiny)
 

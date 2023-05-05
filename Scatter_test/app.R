@@ -21,7 +21,7 @@ library(dplyr)
 ui <- fluidPage(
 
     # Application title
-    titlePanel("An interactive scatter plot for teaching"),
+    titlePanel("An interactive scatter plot to learn about linear regression"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
