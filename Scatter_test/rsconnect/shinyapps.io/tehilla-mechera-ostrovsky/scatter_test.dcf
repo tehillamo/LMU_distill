@@ -5,7 +5,9 @@ account: tehilla-mechera-ostrovsky
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9036142
-bundleId: 7177712
+bundleId: 7178098
 url: https://tehilla-mechera-ostrovsky.shinyapps.io/scatter_test/
-when: 1683278265.70491
-lastSyncTime: 1683278265.70493
+when: 1683287147.50668
+lastSyncTime: 1683287147.50669
+asMultiple: FALSE
+asStatic: FALSE

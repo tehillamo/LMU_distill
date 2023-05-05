@@ -50,19 +50,41 @@ server <- function(input, output) {
 
     output$Scatter <- renderPlot({
       
-      mtc <- mtcars[, c(input$VarX, input$VarY)]
+      mtc <- mtcars[, c(input$VarY, input$VarX)]
       
-      summ_X <- paste("Mean of", input$VarX, "variable:", mean(mtcars[, c(input$VarX)]))
+      lm_model <-  lm(mtc[,1] ~ mtc[,2])
+      lm_model_sum <- summary(lm_model)
+      
+      cf <- lm_model_sum$coefficients
+      Intercept <- round(cf[1], digits = 3)
+      Slope <- round(cf[2], digits = 3)
+      r_2 <-  round(lm_model_sum$r.squared, digits = 3)
+      
+      int <- paste("intercept", Intercept)
+      slp <-  paste("slope: ", Slope)
+      r2 <-  paste("R^2:", r_2)
 
-      summ_y <- paste("Mean of", input$VarY, "variable:", mean(mtcars[, c(input$VarY)]))
+      summ_y <- paste("Mean of", input$VarY, ":", mean(mtc[, 2]))
       
-      gplot <-  ggplot(mtc, aes(mtc[,1], mtc[,2]), color = mtc[,1]) +
-        geom_point() +
+      max_y_low <- round(as.numeric(max(mtc[, 2]) * 1.4), digits = 3)
+      max_y_up <- round(as.numeric(max(mtc[, 2]) * 1.2), digits = 3)
+      
+      max_x_up <- round(as.numeric(min(mtc[,1]) * 1.2), digits = 3)
+      max_x_low <- round(as.numeric(min(mtc[, 1]) * 1.2), digits = 3)
+      
+
+      
+      gplot <-  ggplot(mtc, aes(mtc[,1], mtc[,2])) +
+        geom_point(aes(colour = factor("red"), alpha = .5)) +
         geom_smooth(method = "lm") + 
-        annotate(geom = "text", x = 15, y = 30, label = summ_X,
+        annotate(geom = "text", x = max_x_up, y = max_y_up, 
+                 label = paste("linear model's output", int, slp, r2, sep = "\n"),
                  color = "red") +
-        annotate(geom = "text", x = 15, y = 32, label = summ_y,
-                 color = "red")
+        
+        xlab(paste("", input$VarX)) +
+        ylab(paste("", input$VarY)) +
+        theme_classic() +
+        theme(legend.position = "none")
       
       gplot
         

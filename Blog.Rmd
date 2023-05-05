@@ -1,0 +1,17 @@
+---
+title: "Blog Posts"
+description: |
+  Blog posts all about cognitive science 
+author:
+  - name: Nora Jones 
+    url: https://example.com/norajones
+    affiliation: Spacely Sprockets
+    affiliation_url: https://example.com/spacelysprokets
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+
+
+
+

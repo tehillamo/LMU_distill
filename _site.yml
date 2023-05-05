@@ -10,4 +10,10 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Blog"
+      href: blog.html
+    - text: "Teaching"
+      menu:
+        - text: "Basics in statistics"
+          href: Stat_basics.html
 output: distill::distill_article

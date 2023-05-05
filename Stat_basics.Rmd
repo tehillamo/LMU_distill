@@ -1,0 +1,51 @@
+---
+title: "Basic concepts in Statistics"
+description: |
+  A new article created using the Distill format.
+author:
+  - name: Tehilla Ostrovsky
+    url: https://github.com 
+    affiliation: LMU
+    #affiliation_url: 
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+Hello and welcome to my blog post about linear models in statistics! 
+
+Linear models are an essential tool in statistics used to model the relationship between a dependent variable and one or more independent variables. They are widely used in fields such as economics, engineering, and social sciences to make predictions and understand the impact of one variable on another. In this post, we'll explore linear models in more detail and introduce an interactive Shiny app plot that will help you visualize the concepts.
+
+Before we dive into the Shiny app, let's first define what a linear model is. A linear model is a mathematical equation that represents a linear relationship between two or more variables. The simplest form of a linear model is a straight line equation of the form:
+
+$y_{i} = \beta_{0} + \beta_{1} \times X_{1}$
+
+Where Y is the dependent variable, X is the independent variable, a is the intercept, and b is the slope of the line. The slope represents the change in Y for every unit increase in X, while the intercept is the value of Y when X is zero.
+
+Linear models can be extended to include more than one independent variable, and the equation becomes:
+
+$y{i} = a + \beta_{1} \times X_{1} + \beta_{2} \times X_{2} + … + \beta_{n} \times X_{n}$
+
+Where Y is the dependent variable, X1, X2, …, Xn are the independent variables, a is the intercept, and b1, b2, …, bn are the slopes of the respective variables.
+
+Now let's move onto the interactive Shiny app plot. The plot allows you to visualize the relationship between two variables and fit a linear model to the data. To use the app, follow these steps:
+
+1. Choose the variables from the dropdown menu.
+
+2. Observe how the line changes to fit the data points better.
+
+3. Observe how the changes in: 
+  - Means
+  - p-values
+  - R-squared value as you adjust the model.
+
+The app plot is an excellent way to see how the slope and intercept of a linear model can impact the fit of the model to the data. You can also see how the R-squared value changes as you adjust the model, which is a measure of how well the model fits the data. The closer the R-squared value is to 1, the better the model fits the data.
+
+
+```{r echo=FALSE}
+library(shiny)
+
+knitr::include_app("https://tehilla-mechera-ostrovsky.shinyapps.io/scatter_test/?_ga=2.28094076.1162650381.1683277660-2121495814.1683277660", 
+  height = "600px")
+```
+
+In conclusion, linear models are a powerful tool in statistics, and the interactive Shiny app plot provides an excellent way to explore the concepts. With the app, you can experiment with different linear models and see how they fit the data. I hope you found this post informative and helpful, and please don't hesitate to leave any comments or questions below!

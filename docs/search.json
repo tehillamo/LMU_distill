@@ -3,17 +3,51 @@
     {
       "path": "about.html",
       "title": "About this site",
-      "description": "Some additional details about the website",
+      "description": "Teaching basics in Statistics",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2023-05-05T10:34:32+02:00"
+      "last_modified": "2023-05-05T13:32:36+02:00"
+    },
+    {
+      "path": "Blog.html",
+      "title": "Blog Posts",
+      "description": "Blog posts all about cognitive science \n",
+      "author": [
+        {
+          "name": "Nora Jones",
+          "url": "https://example.com/norajones"
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\n\n\n\n",
+      "last_modified": "2023-05-05T13:32:38+02:00"
     },
     {
       "path": "index.html",
       "title": "Chair of Computational Modeling in Psychology",
       "author": [],
-      "contents": "\n\n          \n          \n          Computational Modeling in Psychology: LMU\n          \n          \n          Home\n          About\n          ☰\n          \n          \n      \n        \n          Chair of Computational Modeling in Psychology\n          \n            \n                \n                  \n                     LMU Page\n                  \n                \n              \n                            \n                \n                  \n                     Github\n                  \n                \n              \n                            \n                \n                  \n                     Twitter\n                  \n                \n              \n                          \n        \n\n        \n          \n      \n      \n        \n          \n          About Us\n          \n          \n          New Publications\n          \n          \n          Teaching\n          \n          \n          \n          \n          Blogs\n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              Chair of Computational Modeling in Psychology\n            \n            \n              \n                \n                                    \n                    \n                       LMU Page\n                    \n                  \n                                    \n                    \n                       Github\n                    \n                  \n                                    \n                    \n                       Twitter\n                    \n                  \n                                  \n              \n            \n            \n              \n              About Us\n              \n              \n              New Publications\n              \n              \n              Teaching\n              \n              \n              \n              \n              Blogs\n              \n            \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2023-05-05T12:21:43+02:00"
+      "contents": "\n\n          \n          \n          Computational Modeling in Psychology: LMU\n          \n          \n          Home\n          About\n          Blog\n          \n          \n          Teaching\n           \n          ▾\n          \n          \n          Basics in statistics\n          \n          \n          ☰\n          \n          \n      \n        \n          Chair of Computational Modeling in Psychology\n          \n            \n                \n                  \n                     LMU Page\n                  \n                \n              \n                            \n                \n                  \n                     Github\n                  \n                \n              \n                            \n                \n                  \n                     Twitter\n                  \n                \n              \n                          \n        \n\n        \n          \n      \n      \n        \n          \n          About Us\n          \n          \n          New Publications\n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              Chair of Computational Modeling in Psychology\n            \n            \n              \n                \n                                    \n                    \n                       LMU Page\n                    \n                  \n                                    \n                    \n                       Github\n                    \n                  \n                                    \n                    \n                       Twitter\n                    \n                  \n                                  \n              \n            \n            \n              \n              About Us\n              \n              \n              New Publications\n              \n            \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2023-05-05T13:45:27+02:00"
+    },
+    {
+      "path": "Stat_basics.html",
+      "title": "Basic concepts in Statistics",
+      "description": "A new article created using the Distill format.\n",
+      "author": [
+        {
+          "name": "Tehilla Ostrovsky",
+          "url": "https://github.com"
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\nHello and welcome to my blog post about linear models in statistics!\nLinear models are an essential tool in statistics used to model the relationship between a dependent variable and one or more independent variables. They are widely used in fields such as economics, engineering, and social sciences to make predictions and understand the impact of one variable on another. In this post, we’ll explore linear models in more detail and introduce an interactive Shiny app plot that will help you visualize the concepts.\nBefore we dive into the Shiny app, let’s first define what a linear model is. A linear model is a mathematical equation that represents a linear relationship between two or more variables. The simplest form of a linear model is a straight line equation of the form:\n\\(y_{i} = \\beta_{0} + \\beta_{1} \\times X_{1}\\)\nWhere Y is the dependent variable, X is the independent variable, a is the intercept, and b is the slope of the line. The slope represents the change in Y for every unit increase in X, while the intercept is the value of Y when X is zero.\nLinear models can be extended to include more than one independent variable, and the equation becomes:\n\\(y{i} = a + \\beta_{1} \\times X_{1} + \\beta_{2} \\times X_{2} + … + \\beta_{n} \\times X_{n}\\)\nWhere Y is the dependent variable, X1, X2, …, Xn are the independent variables, a is the intercept, and b1, b2, …, bn are the slopes of the respective variables.\nNow let’s move onto the interactive Shiny app plot. The plot allows you to visualize the relationship between two variables and fit a linear model to the data. To use the app, follow these steps:\nChoose the variables from the dropdown menu.\nObserve how the line changes to fit the data points better.\nObserve how the changes in:\nMeans\np-values\nR-squared value as you adjust the model.\nThe app plot is an excellent way to see how the slope and intercept of a linear model can impact the fit of the model to the data. You can also see how the R-squared value changes as you adjust the model, which is a measure of how well the model fits the data. The closer the R-squared value is to 1, the better the model fits the data.\n\n\n\n\nIn conclusion, linear models are a powerful tool in statistics, and the interactive Shiny app plot provides an excellent way to explore the concepts. With the app, you can experiment with different linear models and see how they fit the data. I hope you found this post informative and helpful, and please don’t hesitate to leave any comments or questions below!\n\n\n\n",
+      "last_modified": "2023-05-05T13:40:18+02:00"
+    },
+    {
+      "path": "Teaching.html",
+      "author": [],
+      "contents": "\ntitle: “Untitled”\ndescription: |\nA new article created using the Distill format.\nauthor:\n- name: Nora Jones\nurl: https://example.com/norajones\naffiliation: Spacely Sprockets\naffiliation_url: https://example.com/spacelysprokets\ndate: “2023-05-05”\noutput:\noutput: distill::distill_article\n\n\n\n",
+      "last_modified": "2023-05-05T13:32:40+02:00"
     }
   ],
   "collections": []
