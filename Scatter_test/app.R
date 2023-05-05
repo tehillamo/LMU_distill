@@ -17,6 +17,7 @@ library(dplyr)
 
 
 
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
@@ -87,6 +88,15 @@ server <- function(input, output) {
         theme(legend.position = "none")
       
       gplot
+      
+      
+      data(iris)
+      ggplot_2 <-  ggplot(iris, aes(x=Petal.Width, y=Sepal.Width, z=Petal.Length, color=Species)) + 
+        theme_void() +
+        axes_3D() +
+        stat_3D()
+      
+      ggplot_2
         
     })
 }

@@ -34,7 +34,8 @@ Now let's move onto the interactive Shiny app plot. The plot allows you to visua
 2. Observe how the line changes to fit the data points better.
 
 3. Observe how the changes in: 
-  - Means
+  - Intercept
+  - Slope(s)
   - p-values
   - R-squared value as you adjust the model.
 
