@@ -1,15 +1,16 @@
 ---
-title: "Blog Posts"
+title: "Blog Posts on contreversial topics 😏"
 description: |
-  Blog posts all about cognitive science 
+  
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: Chris Donkin vs. Nathan Evans 
+    #url: 
+    affiliation: LMU
+    affiliation_url: 
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
+
 
 
 

@@ -1,0 +1,13 @@
+name: app_2
+title: app_2
+username:
+account: tehilla-mechera-ostrovsky
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9037814
+bundleId: 7184972
+url: https://tehilla-mechera-ostrovsky.shinyapps.io/app_2/
+when: 1683463803.39389
+lastSyncTime: 1683463803.3939
+asMultiple: FALSE
+asStatic: FALSE

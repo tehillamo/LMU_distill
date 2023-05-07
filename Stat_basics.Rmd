@@ -53,8 +53,19 @@ After looking at the different variables in this dataset, lets see how each of t
 
 ```{r echo=FALSE}
 library(shiny)
+library(shinyjs)
 
-knitr::include_app("https://tehilla-mechera-ostrovsky.shinyapps.io/scatter_test/?_ga=2.28094076.1162650381.1683277660-2121495814.1683277660", 
+knitr::include_app("https://tehilla-mechera-ostrovsky.shinyapps.io/Scatter_Linear/?_ga=2.32885118.1162650381.1683277660-2121495814.1683277660", 
+  height = "600px")
+```
+
+somehting 
+
+```{r echo=FALSE}
+library(shiny)
+library(shinyjs)
+
+knitr::include_app("https://tehilla-mechera-ostrovsky.shinyapps.io/app_3d/?_ga=2.120581448.1162650381.1683277660-2121495814.1683277660", 
   height = "600px")
 ```
 
