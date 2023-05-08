@@ -65,7 +65,7 @@ somehting
 library(shiny)
 library(shinyjs)
 
-knitr::include_app("https://tehilla-mechera-ostrovsky.shinyapps.io/app_2/?_ga=2.27844284.1891469921.1683464181-2121495814.1683277660", 
+knitr::include_app("https://tehilla-mechera-ostrovsky.shinyapps.io/app_new/?_ga=2.204656912.1891469921.1683464181-2121495814.1683277660", 
   height = "600px")
 ```
 

@@ -1,0 +1,14 @@
+name: app_new
+title: app_new
+username:
+account: tehilla-mechera-ostrovsky
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9053761
+bundleId: 7188209
+url: https://tehilla-mechera-ostrovsky.shinyapps.io/app_new/
+when: 1683539306.84163
+lastSyncTime: 1683539306.84165
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Rplots.pdf
