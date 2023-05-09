@@ -17,7 +17,7 @@ output:
 site: distill::distill_website
 ---
  
-## About Us 
+## News
 
 ## New Publications
 

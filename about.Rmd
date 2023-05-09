@@ -1,7 +1,7 @@
 ---
 title: "About this site"
 description: |
-  Teaching basics in Statistics
+  Our Team 
 ---
 
 

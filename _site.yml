@@ -14,6 +14,8 @@ navbar:
       href: blog.html
     - text: "Teaching"
       menu:
-        - text: "Basics in statistics"
-          href: Stat_basics.html
+        - text: "Basics in statistics - Linear Models"
+          href: Stat_basics_lm.html
+        - text: "Basics in statistics - Distributions"
+          href: Stat_basics_distr.html
 output: distill::distill_article
