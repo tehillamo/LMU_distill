@@ -18,4 +18,6 @@ navbar:
           href: Stat_basics_lm.html
         - text: "Basics in statistics - Distributions"
           href: Stat_basics_distr.html
+        - text: "Basics in statistics - Central Limit Theorem"
+          href: Stat_basics_central.html
 output: distill::distill_article

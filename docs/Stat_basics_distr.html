@@ -2430,6 +2430,7 @@ Teaching
 <div class="nav-dropdown-content">
 <a href="Stat_basics_lm.html">Basics in statistics - Linear Models</a>
 <a href="Stat_basics_distr.html">Basics in statistics - Distributions</a>
+<a href="Stat_basics_central.html">Basics in statistics - Central Limit Theorem</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2490,22 +2491,6 @@ Teaching
 </div>
 <p><img src="BiVarNormal.png" width="90%" height="90%" style="display: block; margin: auto;" /></p>
 </div>
-<h1 id="central-limit-theorm">Central Limit Theorm</h1>
-<p>The central limit theorem is a fundamental concept in statistics that states that as the sample size increases, the distribution of the sample means will approach a normal distribution, regardless of the underlying distribution of the population.</p>
-<p>This is true for any independent, identically distributed random variables with a finite mean and variance. The central limit theorem is essential because it allows us to make inferences about a population based on a sample.</p>
-<p>The basic equation for the central limit theorem is:</p>
-<p><span class="math inline">\(z = (x̄ - μ) / (σ / √n)\)</span></p>
-<p>where <span class="math inline">\(z\)</span> is the standard normal random variable, <span class="math inline">\(x̄\)</span> is the sample mean, μ is the population mean, σ is the population standard deviation, and n is the sample size.</p>
-<p>A simulation plot of the central limit theorem can demonstrate how the sample mean distribution approaches a normal distribution as the sample size increases. The plot can show different sample sizes on the x-axis and the sample mean distribution on the y-axis. The simulation can be run using a non-normal population distribution, such as the uniform or exponential distribution, and show that as the sample size increases, the distribution of the sample means becomes increasingly normal. The plot can also illustrate how the standard deviation of the sample means decreases as the sample size increases, indicating more precise estimates of the population mean. This visualization can help to reinforce the concept of the central limit theorem and its practical implications in statistical analysis.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"CentralTheorm_ND_sim.png"</span><span class='op'>)</span></span></code></pre>
-</div>
-<p><img src="CentralTheorm_ND_sim.png" width="90%" height="90%" style="display: block; margin: auto;" /></p>
-</div>
-<p>Why do we need central theorm?</p>
-<p>Intuitively, we can think of the distribution of sample means as a way of characterizing the variability that we would expect to see in the sample means if we were to take many different samples from the same population. If we were to take multiple samples of the same size from a population and calculate the sample mean for each sample, we would end up with a range of different values. The distribution of these sample means would give us a sense of how much variability we can expect in the sample mean, which in turn provides information about the uncertainty in our estimate of the population mean.</p>
-<p>The distribution of sample means is important because it allows us to make statements about the population mean with a certain degree of confidence. By calculating the standard error of the mean and constructing confidence intervals around the sample mean, we can estimate the range of values that the population mean is likely to fall within with a certain level of confidence. This is a powerful tool in statistical inference and is used in a wide range of fields, from medicine to finance to social sciences.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
