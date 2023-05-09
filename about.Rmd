@@ -1,7 +1,7 @@
 ---
-title: "About this site"
+title: "About Our Group"
 description: |
-  Our Team 
+  Who we are and what we are intreseted in?
 ---
 
 

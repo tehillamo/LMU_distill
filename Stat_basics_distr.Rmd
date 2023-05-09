@@ -37,6 +37,40 @@ One of the key features of the normal distribution is the 68-95-99.7 rule, also 
 The normal distribution is widely used in statistics and science because it is a useful model for many natural phenomena. For example, many physical and biological measurements, such as height, weight, and IQ scores, are normally distributed in the population. The normal distribution also plays a key role in statistical hypothesis testing and estimation, as many statistical tests assume normality of the underlying data.
 
 
+```{python}
+library(reticulate)
+from mpl_toolkits.mplot3d import axes3d
+import matplotlib.pyplot as plt
+from matplotlib import cm
+import numpy as np
+
+def gauss1(x):
+    return np.exp(-(x**2))
+
+def gauss(x, y):
+    return gauss1(x)*gauss1(2*y)
+
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+x = np.linspace(-3, 3, 100)
+y = np.linspace(-3, 3, 100)
+X, Y = np.meshgrid(x, y)
+Z = gauss(X, Y)
+
+ax.plot_surface(X, Y, Z, rstride=2, cstride=2, alpha=0.4, cmap=cm.coolwarm)
+cset = ax.contourf(X, Y, Z, zdir='x', offset=-4, cmap=cm.coolwarm)
+cset = ax.contourf(X, Y, Z, zdir='y', offset=4, cmap=cm.coolwarm)
+
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+
+plt.savefig('BiVarNormalDist.png',dpi=300)
+plt.show()
+
+```
+
+
 ```{r normal, fig.align="center", out.height="90%", out.width = "90%"}
 library(knitr)
 knitr::include_graphics("Emp_Rule_normalDist.png")
