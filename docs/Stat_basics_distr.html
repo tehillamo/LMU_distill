@@ -2455,6 +2455,28 @@ Teaching
 
 <div class="d-article">
 <h1 id="the-normal-distribution">The Normal Distribution</h1>
+<p>The normal distribution, also known as the Gaussian distribution, is a probability distribution that is widely used in statistics and science. It is characterized by a bell-shaped curve, which is symmetrical and has a single peak at the center.</p>
+<p>The normal distribution is defined by two parameters:</p>
+<ol type="1">
+<li>The mean, which determines the center of the curve, and</li>
+<li>The standard deviation, which determines the width of the curve.</li>
+</ol>
+<p>The equation for the normal distribution is:</p>
+<p><span class="math inline">\(f(x) = (1/σ√(2π)) e^{(-(x-μ)²/(2σ²))}\)</span></p>
+<p>where <span class="math inline">\(f(x)\)</span> is the probability density function of the normal distribution, <span class="math inline">\(x\)</span> is the random variable, μ is the mean, σ is the standard deviation, and e is the mathematical constant, known as Euler’s number.</p>
+<p>Intuitively, we can think of the normal distribution as a way of describing the variability of a set of data.</p>
+<p>If we have a set of data that is normally distributed, we can use the mean and standard deviation to understand the characteristics of the data.</p>
+<p>-&gt; The mean tells us the central value around which the data is centered, while the standard deviation tells us the spread or variability of the data around the mean.</p>
+<p>One of the key features of the normal distribution is the 68-95-99.7 rule, also known as the empirical rule or the three-sigma rule. This rule states that approximately 68% of the data falls within one standard deviation of the mean, 95% of the data falls within two standard deviations of the mean, and 99.7% of the data falls within three standard deviations of the mean. This rule is important because it allows us to make inferences about the likelihood of observing certain values in a normally distributed dataset.</p>
+<p>The normal distribution is widely used in statistics and science because it is a useful model for many natural phenomena. For example, many physical and biological measurements, such as height, weight, and IQ scores, are normally distributed in the population. The normal distribution also plays a key role in statistical hypothesis testing and estimation, as many statistical tests assume normality of the underlying data.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://yihui.org/knitr/'>knitr</a></span><span class='op'>)</span></span>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"Emp_Rule_normalDist.png"</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="Emp_Rule_normalDist.png" width="90%" height="90%" style="display: block; margin: auto;" /></p>
+</div>
+<h1 id="bivariate-normal-distribution">Bivariate Normal Distribution</h1>
 <p>Bivariate normal distribution is a statistical model that describes the joint distribution of two random variables that are normally distributed. It is used to analyze the relationship between two continuous variables, such as height and weight or income and education level. The distribution is characterized by two parameters: the mean and the covariance.</p>
 <p>The mean represents the center of the distribution, while the covariance measures the degree to which the two variables vary together.</p>
 <p>A 3D simulation image of a bivariate normal distribution (see below) shows two variables plotted on the x and y-axis, with the height of the surface representing the probability density of each combination of values.</p>
@@ -2464,8 +2486,7 @@ Teaching
 <p>I created this plot to illustrate the Bivariat normal distribution in Python (here is the link to the <a href="https://colab.research.google.com/drive/1gVUhfoiwFYnisKvdE_HEgiYdiuyPZpcp">code</a></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://yihui.org/knitr/'>knitr</a></span><span class='op'>)</span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"BIVARNORMAL.png"</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"BIVARNORMAL.png"</span><span class='op'>)</span></span></code></pre>
 </div>
 <p><img src="BiVarNormal.png" width="90%" height="90%" style="display: block; margin: auto;" /></p>
 </div>
