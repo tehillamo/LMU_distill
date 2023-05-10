@@ -20,4 +20,6 @@ navbar:
           href: Stat_basics_distr.html
         - text: "Basics in statistics - Central Limit Theorem"
           href: Stat_basics_central.html
+        - text: "Basics in statistics - P-Hacking"
+          href: p_hacking_sim.html
 output: distill::distill_article
