@@ -22,4 +22,6 @@ navbar:
           href: Stat_basics_central.html
         - text: "Basics in statistics - P-Hacking"
           href: p_hacking_sim.html
+        - text: "Analyses of Variance"
+          href: anova.html
 output: distill::distill_article

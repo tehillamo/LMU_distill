@@ -10,11 +10,13 @@ author:
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
+
+# Introduction:
+
 In statistical analysis, it's important to have a solid understanding of the underlying data generating process before drawing any meaningful conclusions. 
 
 
-
-To illustrate this concept, the following code chunk simulates five datasets (Daten1-Daten5) with 10 (n = 10) random samples. 
+To illustrate this concept, the following code chunk simulates five datasets ('Daten1' - 'Daten5') with 10 random samples ($n = 10$). 
 
 The code generates the datasets using the rnorm() function, and ensures that the data is normally distributed with a mean of 0 (which is the default value if not otherwise specified) and standard deviation of 1 (which is the default value if not otherwise specified). 
 
@@ -74,7 +76,9 @@ ds <- c(d1, d2, d3, d4, d5)
 
 We proceed by computing the weights for each of the effect sizes obtained above. 
 
-The formula is $w_{i} = \frac{1}{\frac{2*n}{n^2} + \frac{d^2}{4*n}}$
+The formula is $w_{i} = \frac{1}{\frac{2*n}{n^2} + \frac{d^2}{4*n}}$.
+
+Here are the weights for each effect size:
 
 ```{r}
 # Berechnung der Gewichte
@@ -84,6 +88,7 @@ w3 <- 1 / (((2*n)/(n^2)) + ((d3^2) / (4*n)))
 w4 <- 1 / (((2*n)/(n^2)) + ((d4^2) / (4*n)))
 w5 <- 1 / (((2*n)/(n^2)) + ((d5^2) / (4*n)))
 ws <- c(w1, w2, w3, w4, w5)
+ws
 ```
 
 
@@ -107,7 +112,9 @@ t.test(Daten5$x1, Daten5$x2, var.equal = TRUE)
 # KI für delta in Experiment 2 ist sehr breit
 # auch Werte für den wahren Effekt nahe 0 sind plausibel
 cohen.d(Daten2$x1, Daten2$x2, na.rm = TRUE)
+```
 
+```{r include=FALSE}
 # FEHLER: OPTIONAL STOPPING!!!
 # Simuliere eine neue Personen gro Gruppe in Experiment 2
 Daten2 <- rbind(Daten2, rnorm(2))
@@ -163,7 +170,7 @@ pwr.t.test(power = 0.8, sig.level = 0.05, d = -1.034, alternative = "less")
 cohen.d(Daten2$x1, Daten2$x2, na.rm = TRUE)
 ```
 
-*A littile background story:*
+##*A littile background story:*
 Once upon a time, there was a researcher named Bob who was tasked with analyzing data for his company. Bob had a lot of pressure on his shoulders, as his boss had promised to deliver some groundbreaking results by the end of the week. Bob knew he had to produce statistical results, but he was also aware that statistical analysis could be quite tricky.
 
 Determined to get the job done, Bob started analyzing his data. After every single observation, Bob would check to see if the results were significant. If they weren't, he would move on to the next observation. 

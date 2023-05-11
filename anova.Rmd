@@ -1,0 +1,232 @@
+$---
+title: "Analysis of Variance - A Guide"
+description: |
+author:
+  - name: Tehilla Ostrovsky
+    url:
+    affiliation: LMU
+    affiliation_url:
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+## What is an Omnibus test and how is it related to the analysis of variance?
+
+Omnibus tests are a kind of statistical test. They test whether the *explained variance* in a set of data is significantly greater than the *unexplained variance*, overall. 
+
+Omnibus test commonly refers to either one of those statistical tests:
+
+1. ANOVA F test to test significance between all factor means and/or between their variances equality in Analysis of Variance procedure
+2. The omnibus multivariate F Test in ANOVA with repeated measures
+3. F test for equality/inequality of the regression coefficients in multiple regression;
+4. Chi-Square test for exploring significance differences between blocks of independent explanatory variables or their coefficients in a logistic regression.
+
+
+## Basic terminology:
+- Factor - an independent variable 
+  - A factor can be either categorical or continuous. 
+- Level - variables that are categories into different levels or groups.
+  - Categorical factors have distinct levels that are not related to each other (e.g. type of fertilizer), while continuous factors represent a range of values along a continuum (e.g. temperature).
+
+
+In ANOVA, the factor is used to test whether there is a significant difference in the means of the dependent variable (e.g. expressed aggression) across the different levels of the factor (age groups).
+
+
+## One-Way vs. Two-Way ANOVA
+One-way ANOVA and two-way ANOVA are two variations of this test that differ in their design and purpose.
+
+In a **one-way ANOVA**, you are testing the difference in means between two or more groups on a single independent variable (or factor). 
+
+*For example*, if you are testing the effectiveness of three different brands of pain reliever, and you are measuring the amount of pain relief achieved, then you would conduct a one-way ANOVA to determine if there is a significant difference in pain relief between the three brands.
+
+In a **two-way ANOVA**, you are testing the difference in means between two or more groups on two independent variables (or factors). 
+
+*For example*, if you are testing the effectiveness of two different brands of pain reliever on two different age groups, and you are measuring the amount of pain relief achieved, then you would conduct a two-way ANOVA to determine if there is a significant difference in pain relief between the two brands and between the two age groups.
+
+## So what is the difference between the two again?
+The main difference between one-way and two-way ANOVA is the number of independent variables being tested. 
+
+One-way ANOVA is appropriate when you want to test the difference in means between two or more groups on a single independent variable. Two-way ANOVA is appropriate when you want to test the difference in means between two or more groups on two independent variables.
+
+
+
+
+## Lets get down to business...
+
+*A reminder:*
+
+The statistical model of ANOVA is a way of mathematically representing the variation in a dependent variable (Y) across different levels of one or more independent variables, also known as factors (X).
+
+The simplest ANOVA model is the one-way ANOVA, where there is only one factor with k levels (or groups).
+
+Lets look at the actual statistical model:
+
+$Yij = µ + τi + εij$
+
+where:
+
+$Yij$ represents the value of the dependent variable for the jth observation in the ith group.
+
+$µ$ represents the overall mean of the dependent variable across all groups.
+
+$τi$ represents the difference between the mean of the ith group and the overall mean.
+
+$εij$ represents the random error term, which accounts for the variability in the dependent variable that is not explained by the factor.
+
+To calculate the F-statistic for the one-way ANOVA, we compare the **between-group variance **(which reflects the differences between the means of the groups) to the **within-group variance** (which reflects the variability of the observations within each group). The formula for the F-statistic is:
+
+$F = \frac{MS_{between}}{MS_{within}}$
+
+where $MS_{between}$ is the mean square between groups, and $MS_{within}$ is the mean square within groups.
+
+## Examples are always a good idea so here is one:
+
+let's say we want to test whether there is a significant difference in the mean weight of three different breeds of dogs: Poodles, Bulldogs, and Golden Retrievers. 
+
+
+```{r dogs, fig.align="center", out.height="50%", out.width = "50%", echo=FALSE}
+htmltools::div(
+  style = "box-shadow: 5px 5px 6px grey;border: solid;border-color: #EEEEEE; border-width: 1px; height:250px; width:350px; display:block; margin-left: auto; margin-right: auto;",
+  htmltools::img(src = "dogs.jpg")
+)
+```
+
+
+
+Lets further say that we randomly select 10 dogs from each breed and record their weight. The data can be represented in the following table:
+
+| Breed             | Weight (lbs) |
+|-------------------|--------------|
+| Poodle            | 12           |
+| Poodle            | 14           |
+| ...               | ...          |
+| Bulldog           | 25           |
+| Bulldog           | 24           |
+| ...               | ...          |
+| Golden Retriever  | 60           |
+| Golden Retriever  | 58           |
+| ...               | ...          |
+
+
+
+Our Research Question: Can test whether there is a significant difference in the mean weight of the three breeds?
+
+Answer: Yes. Using the one-way ANOVA model (because we are asking about 1 factor (breed) with 3 levels (Poodle, Bulldog, and Golden Retriever))
+
+The factor is the breed, and the dependent variable is the weight. We can calculate the F-statistic and p-value to determine whether there is a statistically significant difference between the means.
+
+## Here is how we would do it by hand (but who would, really? R solves it instantly)...
+
+1. Calculate the total sum of squares (SST), which is the sum of the squared deviations of each observation from the overall mean:
+
+$SST = Σ(Yij - Y..)²$
+
+where $Yij$ is the *weight* of the *jth dog* in the *ith* group, and $Y$.. is the overall mean weight.
+
+In this example, the overall mean weight $Y_{weight}$ is:
+
+$Y.. = (12 + 14 + ... + 60 + 58) / 30 = 34.3$
+
+
+The total sum of squares is:
+
+$SST = (12 - 34.3)² + (14 - 34.3)² + ... + (60 - 34.3)² + (58 - 34.3)² = 9688.3$
+
+
+Good! the next step is:
+2. Calculate the between-group sum of squares (SSB), which is the sum of the squared deviations of each group mean from the overall mean:
+
+
+$SSB = Σ(Ni * (Yi. - Y..)²)$
+
+
+where $Ni$ is the number of observations in the $ith$ group, $Yi$. is the mean weight of the ith group, and $Y$.. is the overall mean weight.
+
+
+$Mean weight of Poodles = (12 + 14 + ... + 16) / 10 = 14.7$
+$Mean weight of Bulldogs = (25 + 24 + ... + 29) / 10 = 26.3$
+$Mean weight of Golden Retrievers = (60 + 58 + ... + 57) / 10 = 58.7$
+
+
+The between-group sum of squares is:
+
+$SSB = (10 * (14.7 - 34.3)²) + (10 * (26.3 - 34.3)²) + (10 * (58.7 - 34.3)²) = 8436.0$
+
+Well done. here is the final step: 
+
+3. Calculate the within-group sum of squares (SSW), which is the sum of the squared deviations of each observation from its group mean:
+
+$SSW = Σ(Yij - Yi.)²$
+
+where $Yi$. is the mean weight of the *ith* group.
+
+
+Which in our example, the within-group sum of squares is:
+$SSW = (12 - 14.7)² + (14 - 14.7)² + ... + (57 - 58...$
+
+
+Now we are ready to compute the statistical test that will determine if the weights of the three breeds differ significantly.
+
+To do this we will complete the following steps: 
+
+1. Calculate the degrees of freedom (df) for the F-statistic. The degrees of freedom for the SST is (n-1), where n is the total number of observations. The degrees of freedom for the SSB is (k-1), where k is the number of groups. The degrees of freedom for the SSW is (n-k), which is the total number of observations minus the number of groups:
+
+
+$df_{SST} = n - 1 = 29$
+$df_{SSB} = k - 1 = 2$
+$df_{SSW} = n - k = 27$
+
+
+2. Calculate the mean square (MS) for the between-group and within-group variances, which is the sum of squares divided by their respective degrees of freedom:
+
+
+$MS_{Breed} = SSB / df_{SSB} = 8436.0 / 2 = 4218.0$
+$MS_{Weight} = SSW / df_{SSW} = 124.4$
+
+3. Calculate the F-statistic, which is the ratio of the between-group variance to the within-group variance:
+
+$F = MS_{Breed} / MS_{Weight} = 4218.0 / 124.4 = 33.9$
+
+
+Calculate the p-value, which is the probability of obtaining an F-statistic as extreme or more extreme than the observed F-statistic, assuming the null hypothesis is true. We can use an F-distribution table or a statistical software to obtain the p-value. For example, using a significance level of 0.05, the p-value is less than 0.001, which is highly significant.
+Therefore, we can reject the null hypothesis and conclude that there is a significant difference in the mean weight of Poodles, Bulldogs, and Golden Retrievers.
+
+
+Here is a code in R to perform this computation:
+
+```{r}
+# Create a data frame with the weight data
+data <- data.frame(
+  weight = c(20, 25, 18, 22, 15, 28, 21, 23, 19, 26, 
+             17, 24, 16, 27, 14, 29, 13, 30, 12, 31, 
+             11, 32, 10, 33, 9, 34, 8, 35, 7, 36),
+  breed = c(rep("Poodle", 10), rep("Bulldog", 10), rep("Golden Retriever", 10))
+)
+
+# Run the ANOVA
+anova_result <- aov(weight ~ breed, data = data)
+
+# Print the ANOVA table
+summary(anova_result)
+
+```
+
+Here is the interpretation of these results:
+
+Sure! Here's an interpretation of each element in the ANOVA table output:
+
+- *Df*: This column indicates the degrees of freedom for each source of variation in the ANOVA model. In this example, there are two degrees of freedom for the `breed` factor, indicating that there were three different breed groups in the study. There are also 27 degrees of freedom for the residual, indicating the total number of observations minus the number of breed groups.
+
+- *Sum Sq*: This column shows the sum of squares for each source of variation. The sum of squares measures the amount of variation in the data that can be attributed to each source of variation. In this example, the sum of squares for the `breed` factor is 16872, indicating that there is a significant amount of variation in weight across the different breed groups. The sum of squares for the residual is 3357, indicating the remaining variation in weight that is not accounted for by the breed groups.
+
+- *Mean Sq*: This column shows the mean sum of squares for each source of variation, which is obtained by dividing the sum of squares by the corresponding degrees of freedom. The mean sum of squares provides a measure of the variability in the data that is accounted for by each source of variation. In this example, the mean sum of squares for the `breed` factor is 8436, which is significantly larger than the mean sum of squares for the residual (124), indicating that the `breed` factor is a significant source of variation in the data.
+
+- *F value*: This column shows the F-statistic for the ANOVA model, which is obtained by dividing the mean sum of squares for the `breed` factor by the mean sum of squares for the residual. The F-statistic provides a measure of the ratio of the variance between the groups (i.e., `breed`) to the variance within the groups (i.e., residual). In this example, the F-value is 33.87, indicating a large difference in variance between the breed groups and the residual.
+
+- *Pr(>F)*: This column shows the p-value associated with the F-statistic for the ANOVA model. The p-value provides a measure of the probability of obtaining an F-statistic as extreme or more extreme than the observed F-statistic, assuming the null hypothesis (i.e., there is no significant difference between the groups) is true. In this example, the p-value is 3.7e-08, which is much smaller than the significance level of 0.05, indicating that we can reject the null hypothesis and conclude that there is a significant difference in weight between the breed groups.
+
+- *Residuals* row consist of the degrees of freedom, sum of squares, and mean sum of squares for the residual. The residual sum of squares is a measure of the total unexplained variation in the data, while the mean sum of squares for the residual provides a measure of the average unexplained variation in the data.
+
+### Important note about residuals:
+
+In an ANOVA model, the residual variance is the variance of the error term, which represents the unexplained variation in the dependent variable. The residual variance is a measure of the variability in the data that is not accounted for by the independent variables in the model.
