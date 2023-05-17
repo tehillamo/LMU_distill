@@ -230,3 +230,5 @@ Sure! Here's an interpretation of each element in the ANOVA table output:
 ### Important note about residuals:
 
 In an ANOVA model, the residual variance is the variance of the error term, which represents the unexplained variation in the dependent variable. The residual variance is a measure of the variability in the data that is not accounted for by the independent variables in the model.
+
+
